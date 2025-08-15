@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import { Search, Menu, X, User, GraduationCap, Moon, Sun, Bell } from 'lucide-react';
+=======
+import { Search, Menu, X, User, GraduationCap, Moon, Sun } from 'lucide-react';
+>>>>>>> 32e55c00e4be434fcc3e7e72365dedc5d43ba6bc
 import { Link, useNavigate } from 'react-router-dom';
 
 const Navigation: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [user, setUser] = useState<any>(null);
+<<<<<<< HEAD
   const [token, setToken] = useState<string>('');
   const [unreadNotifications, setUnreadNotifications] = useState<number>(0);
+=======
+>>>>>>> 32e55c00e4be434fcc3e7e72365dedc5d43ba6bc
   const navigate = useNavigate();
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
+<<<<<<< HEAD
     const checkUser = () => {
       const userData = localStorage.getItem('user');
       const tokenData = localStorage.getItem('token');
@@ -41,6 +49,10 @@ const Navigation: React.FC = () => {
     window.addEventListener('userLogout', handleUserChange);
     window.addEventListener('notificationRead', fetchUnreadCount);
 
+=======
+    const userData = localStorage.getItem('user');
+    setUser(userData ? JSON.parse(userData) : null);
+>>>>>>> 32e55c00e4be434fcc3e7e72365dedc5d43ba6bc
     // Dark mode preference
     const stored = localStorage.getItem('darkMode');
     if (stored === 'true') {
@@ -50,6 +62,7 @@ const Navigation: React.FC = () => {
       setDarkMode(false);
       document.documentElement.classList.remove('dark');
     }
+<<<<<<< HEAD
 
     return () => {
       window.removeEventListener('storage', handleStorageChange);
@@ -104,6 +117,13 @@ const Navigation: React.FC = () => {
     setUser(null);
     // Dispatch custom event to notify other components
     window.dispatchEvent(new Event('userLogout'));
+=======
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setUser(null);
+>>>>>>> 32e55c00e4be434fcc3e7e72365dedc5d43ba6bc
     navigate('/login');
   };
 
@@ -144,10 +164,18 @@ const Navigation: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
+<<<<<<< HEAD
             <div className="flex-shrink-0 flex items-center">
               <GraduationCap className="w-8 h-8 text-blue-600 mr-2" />
               <span className="text-xl font-bold gradient-text">PlacementHub</span>
             </div>
+=======
+            <Link to="/" className="flex-shrink-0 flex items-center">
+  <GraduationCap className="w-8 h-8 text-blue-600 mr-2" />
+  <span className="text-xl font-bold gradient-text">PlacementHub</span>
+</Link>
+
+>>>>>>> 32e55c00e4be434fcc3e7e72365dedc5d43ba6bc
           </div>
 
           {/* Desktop Menu */}
@@ -164,6 +192,7 @@ const Navigation: React.FC = () => {
             <Link to="/jobs" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Jobs
             </Link>
+<<<<<<< HEAD
             <Link to="/notifications" className="text-gray-700 hover:text-blue-600 transition-colors font-medium relative">
               <div className="flex items-center">
                 <Bell className="w-5 h-5 mr-1" />
@@ -180,6 +209,11 @@ const Navigation: React.FC = () => {
                 My Notifications
               </Link>
             )}
+=======
+            <Link to="/notifications" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              Notifications
+            </Link>
+>>>>>>> 32e55c00e4be434fcc3e7e72365dedc5d43ba6bc
             {profileButton}
             <button
               onClick={toggleDarkMode}
@@ -239,6 +273,7 @@ const Navigation: React.FC = () => {
               Jobs
             </Link>
             <Link to="/notifications" className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
+<<<<<<< HEAD
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <Bell className="w-5 h-5 mr-2" />
@@ -256,6 +291,10 @@ const Navigation: React.FC = () => {
                 My Notifications
               </Link>
             )}
+=======
+              Notifications
+            </Link>
+>>>>>>> 32e55c00e4be434fcc3e7e72365dedc5d43ba6bc
             {user ? (
               <>
                 <Link to="/dashboard" className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">

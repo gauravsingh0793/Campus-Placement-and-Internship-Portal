@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import { Search, Filter, MapPin, Briefcase, DollarSign, Building2, Calendar, Users, ArrowRight, Star } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+=======
+import { Search, Filter, MapPin, Briefcase, DollarSign, Building2, Calendar, Users, ArrowRight, Star, IndianRupeeIcon } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+// import IndianRupeeIcon from lucide-react;
+
+
+>>>>>>> 32e55c00e4be434fcc3e7e72365dedc5d43ba6bc
 
 const JobsPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -144,7 +152,11 @@ const JobsPage: React.FC = () => {
       benefits: Array.isArray(job.benefits) ? job.benefits : [],
       category: job.category || 'other',
       experience: job.experience || 'all',
+<<<<<<< HEAD
       postedBy: 'recruiter', // Add postedBy for recruiter jobs
+=======
+      postedBy: 'recruiter', // Add postedBy for recruiter jobs 
+>>>>>>> 32e55c00e4be434fcc3e7e72365dedc5d43ba6bc
     })),
   ];
 
@@ -159,7 +171,11 @@ const JobsPage: React.FC = () => {
   const stats = [
     { number: "2,500+", label: "Active Jobs", icon: <Briefcase className="w-5 h-5" /> },
     { number: "1,200+", label: "Hiring Companies", icon: <Building2 className="w-5 h-5" /> },
+<<<<<<< HEAD
     { number: "₹8.5L", label: "Average Package", icon: <DollarSign className="w-5 h-5" /> },
+=======
+    { number: "₹8.5L", label: "Average Package", icon: <IndianRupeeIcon className="w-5 h-5" /> },
+>>>>>>> 32e55c00e4be434fcc3e7e72365dedc5d43ba6bc
     { number: "78%", label: "Placement Rate", icon: <Users className="w-5 h-5" /> }
   ];
 

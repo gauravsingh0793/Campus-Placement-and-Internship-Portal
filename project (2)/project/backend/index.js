@@ -4,7 +4,10 @@ const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const User = require('./models/User');
+<<<<<<< HEAD
 const Notification = require('./models/Notification');
+=======
+>>>>>>> 32e55c00e4be434fcc3e7e72365dedc5d43ba6bc
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -69,6 +72,7 @@ app.post('/api/login', async (req, res) => {
     return res.status(401).json({ message: 'Invalid credentials.' });
   }
   const token = jwt.sign({ email: user.email, userType: user.userType }, JWT_SECRET, { expiresIn: '1h' });
+<<<<<<< HEAD
   res.json({ token, user: { email: user.email, fullName: user.fullName, userType: user.userType, id: user._id } });
 });
 
@@ -191,6 +195,9 @@ app.post('/api/notifications/:id/read', authenticateToken, async (req, res) => {
     console.error('Error marking notification as read:', error);
     res.status(500).json({ message: 'Error marking notification as read' });
   }
+=======
+  res.json({ token, user: { email: user.email, fullName: user.fullName, userType: user.userType } });
+>>>>>>> 32e55c00e4be434fcc3e7e72365dedc5d43ba6bc
 });
 
 // Serve static files from the React app (adjust path as needed)

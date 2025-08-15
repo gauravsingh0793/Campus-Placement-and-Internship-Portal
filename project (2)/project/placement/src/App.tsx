@@ -11,10 +11,14 @@ import DashboardPage from './components/DashboardPage';
 import UploadResumePage from './components/UploadResumePage';
 import CreateJobAlertPage from './components/CreateJobAlertPage';
 import NotificationsPage from './components/NotificationsPage';
+<<<<<<< HEAD
 import SendNotificationPage from './components/SendNotificationPage';
 import MyNotificationsPage from './components/MyNotificationsPage';
 import ApplyJobPage from './components/ApplyJobPage';
 import UserDebug from './components/UserDebug';
+=======
+import ApplyJobPage from './components/ApplyJobPage';
+>>>>>>> 32e55c00e4be434fcc3e7e72365dedc5d43ba6bc
 import './App.css';
 
 function App() {
@@ -33,11 +37,16 @@ function App() {
           <Route path="/upload-resume" element={<UploadResumePage />} />
           <Route path="/create-job-alert" element={<CreateJobAlertPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
+<<<<<<< HEAD
           <Route path="/send-notification" element={<SendNotificationPage />} />
           <Route path="/my-notifications" element={<MyNotificationsPage />} />
           <Route path="/apply/:jobId" element={<ApplyJobPage />} />
         </Routes>
         <UserDebug />
+=======
+          <Route path="/apply/:jobId" element={<ApplyJobPage />} />
+        </Routes>
+>>>>>>> 32e55c00e4be434fcc3e7e72365dedc5d43ba6bc
       </Router>
     </div>
   );
