@@ -1,1 +1,0 @@
-# Campus-Placement-and-Internship-Portal
